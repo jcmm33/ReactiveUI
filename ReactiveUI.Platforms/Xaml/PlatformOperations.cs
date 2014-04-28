@@ -11,7 +11,8 @@ namespace ReactiveUI.Xaml
         public string GetOrientation()
         {
 #if WINRT
-            return Windows.UI.ViewManagement.ApplicationView.Value.ToString();
+            return Windows.Graphics.Display.DisplayProperties.CurrentOrientation.ToString(); 
+
 #elif SILVERLIGHT
             var app = System.Windows.Application.Current;
             if (app == null) return null;

@@ -50,12 +50,17 @@ namespace ReactiveUI
                 });
             });
 
-            if (ModeDetector.InUnitTestRunner()) {
+
+            // WON'T EXECUTE ON WP8.1 UA but happy in WIndows 8.1 UA
+            if (ModeDetector.InUnitTestRunner())
+            {
                 LogHost.Default.Warn("*** Detected Unit Test Runner, setting MainThreadScheduler to CurrentThread ***");
                 LogHost.Default.Warn("If we are not actually in a test runner, please file a bug\n");
                 _MainThreadScheduler = CurrentThreadScheduler.Instance;
                 return;
-            } else {
+            }
+            else
+            {
                 LogHost.Default.Info("Initializing to normal mode");
             }
 
@@ -115,6 +120,7 @@ namespace ReactiveUI
                 return _UnitTestTaskpoolScheduler ?? _TaskpoolScheduler;
             }
             set {
+                // WON'T EXECUTE ON WP8.1 UA but happy in WIndows 8.1 UA
                 if (ModeDetector.InUnitTestRunner()) {
                     _UnitTestTaskpoolScheduler = value;
                     _TaskpoolScheduler = _TaskpoolScheduler ?? value;
