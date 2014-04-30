@@ -27,11 +27,12 @@ namespace Sample_UniversalApp.ViewModels
 
             var resolver = Locator.CurrentMutable;
 
-            resolver.Register(() => new FirstView(), typeof(IViewFor<FirstViewModel>), "FullScreenLandscape");
+            resolver.Register(() => new FirstView(), typeof(IViewFor<FirstViewModel>), "Landscape");
+
+            resolver.RegisterLazySingleton(() => new MainPage(),typeof(IViewFor),"InitialPage");
 
             resolver.RegisterConstant(this, typeof(IApplicationRootState));
             resolver.RegisterConstant(this, typeof(IScreen));
-            resolver.RegisterConstant(new MainPage(), typeof(IViewFor), "InitialPage");
 
             Router.Navigate.Execute(new FirstViewModel(this){Username = "BOUND USERNAME"});
         }
