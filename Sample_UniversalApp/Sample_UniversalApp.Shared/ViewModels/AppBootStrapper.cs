@@ -27,7 +27,7 @@ namespace Sample_UniversalApp.ViewModels
 
             var resolver = Locator.CurrentMutable;
 
-            resolver.Register(() => new FirstView(), typeof(IViewFor<FirstView>), "FullScreenLandscape");
+            resolver.Register(() => new FirstView(), typeof(IViewFor<FirstViewModel>), "FullScreenLandscape");
 
             resolver.RegisterConstant(this, typeof(IApplicationRootState));
             resolver.RegisterConstant(this, typeof(IScreen));
