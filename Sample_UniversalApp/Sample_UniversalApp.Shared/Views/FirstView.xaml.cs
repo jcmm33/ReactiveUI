@@ -27,7 +27,7 @@ namespace Sample_UniversalApp.Views
         public FirstView()
         {
             this.InitializeComponent();
-            this.OneWayBind(ViewModel, x => x.Username, x => x.UsernameLabel.Text);
+            //this.OneWayBind(ViewModel, x => x.Username, x => x.UsernameLabel.Text);
         }
 
         public FirstViewModel ViewModel

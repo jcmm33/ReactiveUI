@@ -58,6 +58,7 @@
     </Reference>
     <Reference Include="Splat">
       <HintPath>..\ext\winrt\Splat.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Reactive.Core">
       <HintPath>..\ext\winrt\System.Reactive.Core.dll</HintPath>

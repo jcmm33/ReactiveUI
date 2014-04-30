@@ -26,9 +26,9 @@ namespace MobileSample_WinRT.ViewModels
 
             var resolver = Locator.CurrentMutable;
 
-            resolver.Register(() => new TestPage1View(), typeof(IViewFor<TestPage1ViewModel>), "FullScreenLandscape");
-            resolver.Register(() => new TestPage2View(), typeof(IViewFor<TestPage2ViewModel>), "FullScreenLandscape");
-            resolver.Register(() => new TestPage3View(), typeof(IViewFor<TestPage3ViewModel>), "FullScreenLandscape");
+            resolver.Register(() => new TestPage1View(), typeof(IViewFor<TestPage1ViewModel>), "Landscape");
+            resolver.Register(() => new TestPage2View(), typeof(IViewFor<TestPage2ViewModel>), "Landscape");
+            resolver.Register(() => new TestPage3View(), typeof(IViewFor<TestPage3ViewModel>), "Landscape");
             resolver.Register(() => new StringTileView(), typeof(IViewFor<StringTileViewModel>));
 
             resolver.Register(() => new TestPage1ViewModel(), typeof(TestPage1ViewModel));

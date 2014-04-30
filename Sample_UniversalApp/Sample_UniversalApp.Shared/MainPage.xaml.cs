@@ -38,7 +38,12 @@ namespace Sample_UniversalApp
             set { SetValue(ViewModelProperty, value); }
         }
         public static readonly DependencyProperty ViewModelProperty =
-            DependencyProperty.Register("ViewModel", typeof(AppBootstrapper), typeof(MainPage), new PropertyMetadata(null));
+            DependencyProperty.Register("ViewModel", typeof(AppBootstrapper), typeof(MainPage), new PropertyMetadata(null,ViewModelPropertyChanged));
+
+        static void ViewModelPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
 
         object IViewFor.ViewModel
         {

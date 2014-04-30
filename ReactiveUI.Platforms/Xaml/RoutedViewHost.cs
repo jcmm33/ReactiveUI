@@ -57,8 +57,9 @@ namespace ReactiveUI.Xaml
 
         public IViewLocator ViewLocator { get; set; }
 
-        public RoutedViewHost()
+        public RoutedViewHost():base()
         {
+
             HorizontalContentAlignment = HorizontalAlignment.Stretch;
             VerticalContentAlignment = VerticalAlignment.Stretch;
 

@@ -28,6 +28,7 @@ namespace Sample_UniversalApp.ViewModels
             var resolver = Locator.CurrentMutable;
 
             resolver.Register(() => new FirstView(), typeof(IViewFor<FirstViewModel>), "Landscape");
+            resolver.Register(() => new FirstView(), typeof(IViewFor<FirstViewModel>), "Portrait");
 
             resolver.RegisterLazySingleton(() => new MainPage(),typeof(IViewFor),"InitialPage");
 
