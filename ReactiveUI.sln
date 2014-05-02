@@ -1116,9 +1116,9 @@ Global
 		{28319B0E-DF43-4460-BE94-AED801A33C67}.Release|ARM.Deploy.0 = Release|ARM
 		{28319B0E-DF43-4460-BE94-AED801A33C67}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{28319B0E-DF43-4460-BE94-AED801A33C67}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{28319B0E-DF43-4460-BE94-AED801A33C67}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{28319B0E-DF43-4460-BE94-AED801A33C67}.Release|Mixed Platforms.Build.0 = Release|x86
-		{28319B0E-DF43-4460-BE94-AED801A33C67}.Release|Mixed Platforms.Deploy.0 = Release|x86
+		{28319B0E-DF43-4460-BE94-AED801A33C67}.Release|Mixed Platforms.ActiveCfg = Release|ARM
+		{28319B0E-DF43-4460-BE94-AED801A33C67}.Release|Mixed Platforms.Build.0 = Release|ARM
+		{28319B0E-DF43-4460-BE94-AED801A33C67}.Release|Mixed Platforms.Deploy.0 = Release|ARM
 		{28319B0E-DF43-4460-BE94-AED801A33C67}.Release|x64.ActiveCfg = Release|Any CPU
 		{28319B0E-DF43-4460-BE94-AED801A33C67}.Release|x86.ActiveCfg = Release|x86
 		{28319B0E-DF43-4460-BE94-AED801A33C67}.Release|x86.Build.0 = Release|x86
