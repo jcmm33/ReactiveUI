@@ -86,7 +86,7 @@ namespace ReactiveUI.Mobile
             host.ShouldInvalidateState =
                 Observable.FromEventPattern<ApplicationUnhandledExceptionEventArgs>(x => UnhandledException += x, x => UnhandledException -= x)
                     .Select(_ => Unit.Default);
-
+            
             SuspensionHost = host;
 
             //

@@ -1,15 +1,13 @@
 ﻿<Page
-    x:Class="Sample_UniversalApp.MainPage"
+    x:Class="Sample_UniversalApp.Views.BlankPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Sample_UniversalApp"
+    xmlns:local="using:Sample_UniversalApp.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:xaml="using:ReactiveUI.Xaml"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <xaml:RoutedViewHost x:Name="Router" />
-        <TextBlock Text="THIS IS THE MAIN PAGE"></TextBlock>
+
     </Grid>
 </Page>

@@ -36,7 +36,8 @@ namespace ReactiveUI.Mobile
         readonly Subject<IApplicationRootState> _viewModelChanged = new Subject<IApplicationRootState>();
         IApplicationRootState _ViewModel;
 
-        public IApplicationRootState ViewModel {
+
+       public IApplicationRootState ViewModel {
             get { return _ViewModel; }
             set {
                 if (_ViewModel == value) return;
@@ -44,7 +45,7 @@ namespace ReactiveUI.Mobile
                 _viewModelChanged.OnNext(value);
             }
         }
-
+       
         protected AutoSuspendApplication()
         {
             var host = new SuspensionHost();
@@ -84,6 +85,7 @@ namespace ReactiveUI.Mobile
 
             _viewModelChanged.Subscribe(vm => {
                 var page = default(IViewFor);
+
                 var frame = Window.Current.Content as Frame;
 
                 if (frame == null) {
@@ -94,10 +96,13 @@ namespace ReactiveUI.Mobile
                 page = Window.Current.Content as IViewFor;
                 if (page == null) {
                     page = Locator.Current.GetService<IViewFor>("InitialPage");
-                    frame.Content = (UIElement)page;
+
+                    // page is only used to get the type, Navigated event provides us with actual instance
+                    // so assign viewmodel at this point
+                    frame.Navigated += (sender, args) => ((IViewFor) args.Content).ViewModel = args.Parameter;
+                    frame.Navigate(page.GetType(),vm);
                 }
 
-                page.ViewModel = vm;
                 Window.Current.Activate();
             });
 
@@ -122,6 +127,11 @@ namespace ReactiveUI.Mobile
             SuspensionHost.IsLaunchingNew.Subscribe(_ => {
                 ViewModel = Locator.Current.GetService<IApplicationRootState>();
             });
+        }
+
+        void frame_Navigated(object sender, Windows.UI.Xaml.Navigation.NavigationEventArgs e)
+        {
+            (e.Content as IViewFor).ViewModel = e.Parameter;
         }
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
